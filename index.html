@@ -1,13 +1,29 @@
 ---
-layout: default
-title: Home
+layout: landing
+title: Trevor Sargent
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+	<div class="split">
+	<div class="left">
+		<h1><a href="{{site.baseurl}}/left">Trevor</a></h1>
+
+		<div id="leftbar">
+			<ul>
+				<li><a href="{{site.baseurl}}/left/development">Development</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="right">
+		<h1><a href="{{site.baseurl}}/right">Sargent</a></h1>
+
+		<div id="rightbar">
+			<ul>
+				<li><a href="{{site.baseurl}}/right/design">Design</a></li>
+				<li><a href="{{site.baseurl}}/right/photography">Photography</a></li>
+				<li><a href="{{site.baseurl}}/right/writing">Writing</a></li>
+			</ul>
+		</div>
+	</div>
 </div>
+
