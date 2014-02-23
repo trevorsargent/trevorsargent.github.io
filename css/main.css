@@ -14,7 +14,7 @@
 html, body { height: 100%; }
 
 body {
-  background-color: #FFF;
+  background-color: #000;
   /*font-family: 'Neuton', serif;*/
   font: 13.34px Helvetica, Arial, sans-serif;
   /*font-size: small;*/
@@ -27,12 +27,9 @@ h1, h2, h3, h4, h5, h6 {
 /*h1 { margin-bottom: 1em; }*/
 p { margin: 1em 0; }
 
-a{ 
-  color: #b20000; 
+a{
   text-decoration: none;
 }
-a:hover   { color: #c3c3c3; }
-a:visited { color: #b20000; }
 
 /*****************************************************************************/
 /*
@@ -40,32 +37,43 @@ a:visited { color: #b20000; }
 /*
 /*****************************************************************************/
 
+.split {
+  height: 100%;
+  margin: 0 auto -30px; /* the bottom margin is the negative value of the footer's height */
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #eeeeee;
+}
+
 .left{
-  padding-left: 1%;
-  padding-right:1%;
-  width: 48%;
+  width: 98%;
+  padding: 1% 1%;
   float: left;
   background-image:url("../images/gridme.png");
   height: 100%;
   text-align: right;
+  color: #333333;
 }
 
+.split .left{
+    padding-left: 1%;
+  padding-right:1%;
+  width: 48%;
+}
 .right{
+  width: 98%;
+  padding: 1% 1%;
+  background-color: #b20000;
+  background-image:url("../images/cartographer.png");
+  height: 100%;
+  color: #eeeeee;
+}
+.split .right{
   width: 48%;
   float:left;
   padding-left: 1%;
   padding-right:1%;
-  background-color: #b20000;
-  background-image:url("../images/cartographer.png");
-  height: 100%;
-}
-
-.right{
-  color: #eeeeee;
-}
-
-.left{
-  color: #333333;
 }
 
 #rightbar {
@@ -98,14 +106,6 @@ a:visited { color: #b20000; }
 
 #leftbar, #rightbar {
   /*height :120px;*/
-}
-
-.split {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #eeeeee;
-  height:100%;
 }
 
 .split h1{
@@ -158,20 +158,6 @@ a:visited { color: #b20000; }
 /* Home
 /*
 /*****************************************************************************/
-.posts {
-  list-style-type: none;
-  margin-bottom: 2em;
-}
-
-.posts li {
-  line-height: 1.75em;
-}
-
-.posts .date {
-  color: #aaa;
-  /*font-family: Futura;*/
-  font-size: 100%;
-}
 
 /*****************************************************************************/
 /*
@@ -179,76 +165,27 @@ a:visited { color: #b20000; }
 /*
 /*****************************************************************************/
 
-.site {
-  font-size: 115%;
-  text-align: left;
-  width: 42em;
-  margin: 3em auto 2em;
-  line-height: 1.5em;
+h1{
+  font-size: 50px;
 }
 
-.header a {
-  font-weight: bold;
-  text-decoration: none;
+h2{
+  font-size: 30px;
 }
 
-.title {
-  display: inline-block;
-  margin-bottom: 2em;
-}
-
-.title a {
-  color: #a00;
-}
-
-.title a:hover {
-  color: #000;
-}
-
-.header a.extra {
-  color: #aaa;
-  margin-left: 1em;
-}
-
-.header a.extra:hover {
-  color: #000;
-}
-
-.meta {
-  color: #aaa;
-}
-
-.footer {
-  font-size: 80%;
-  color: #666;
-  border-top: 4px solid #eee;
-  margin-top: 2em;
-  overflow: hidden;
-}
-
-.footer .contact {
+.col {
+  width: 200px;
+  text-align: justify;
+  line-height: 1.5;
   float: left;
-  margin-right: 3em;
+  margin:  50px 30px 0 30px;
 }
 
-.footer .contact a {
-  color: #8085C1;
+.wrap{
+  display: table;
+  margin: 0 auto;
+  margin-top: 50px;
 }
-
-.footer .rss {
-  margin-top: 1.1em;
-  margin-right: -.2em;
-  float: right;
-}
-
-.footer .rss img {
-  border: 0;
-}
-
-.nav a{
-  color: #2b0000;
-}
-
 /*****************************************************************************/
 /*
 /* Posts
@@ -285,4 +222,38 @@ a:visited { color: #b20000; }
 
 .post pre.terminal code {
   background-color: #333;
+}
+
+/*****************************************************************************/
+/*
+/* Footer
+/*
+/*****************************************************************************/
+
+
+.footer {
+  position: absolute;
+  height: 20px; /* .push must be the same height as .footer */
+  bottom:0;
+  width: 100%;
+  padding: 0;
+  border:0;
+  text-align: right;
+  right:7px;
+}
+
+.footer a, .footer a:visited{
+  color:#c3c3c3;
+}
+
+.footer a:hover{
+  color:333333;
+}
+
+.footer ul{
+  list-style: none;
+}
+
+.footer li{
+  display: inline;
 }
