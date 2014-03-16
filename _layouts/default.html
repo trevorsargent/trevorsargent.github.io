@@ -1,5 +1,30 @@
 {% include head.html %}
 
+<style type="text/css">
+.tag, .tail {
+	background-image: url("../images/{{page.image}}.png")
+}
+</style>
+
+<div class = "tag">
+	{% include about.html %}
+</div>
+
+<div class = "title">
+	<h1><a href = "{{site.baseurl}}/"> Trevor Sargent</a></h1>
+	<h2>{{page.title}}</h2>
+</div>
+
+{% include nav.html %}
+
+<div class='wrap'>
+	
+	<div class = 'bar'>
+
 {{ content }}
+
+</div>
+</div>
+
 
 {% include foot.html %}

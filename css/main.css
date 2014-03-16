@@ -14,11 +14,12 @@
 html, body { height: 100%; }
 
 body {
-  background-color: #000;
+  background-color: #fff;
   /*font-family: 'Neuton', serif;*/
   font: 13.34px Helvetica, Arial, sans-serif;
   /*font-size: small;*/
   text-align: left;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -39,7 +40,7 @@ a{
 
 .split {
   height: 100%;
-  margin: 0 auto -30px; /* the bottom margin is the negative value of the footer's height */
+  margin: 0 auto 0px; /* the bottom margin is the negative value of the footer's height */
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -47,70 +48,57 @@ a{
 }
 
 .left{
-  width: 98%;
-  padding: 1% 1%;
+  width: 50%;
   float: left;
   background-image:url("../images/gridme.png");
   height: 100%;
   text-align: right;
   color: #333333;
 }
-
-.split .left{
-    padding-left: 1%;
-  padding-right:1%;
-  width: 48%;
-}
 .right{
-  width: 98%;
-  padding: 1% 1%;
+  width: 50%;
   background-color: #b20000;
   background-image:url("../images/cartographer.png");
   height: 100%;
   color: #eeeeee;
-}
-.split .right{
-  width: 48%;
-  float:left;
-  padding-left: 1%;
-  padding-right:1%;
+  float: left;
 }
 
 #rightbar {
-  border-top-width: 2px;
-  border-top-style: solid;
-  border-top-color:white;
-
-  margin-top: 15px;
   padding-left: 15px; 
-
   border-left-width:2px;
   border-left-color: white;
+  border-top-color: white;
   border-left-style: solid;
-  height:10px;
 }
 
 #leftbar {
-  border-top-width: 2px;
-  border-top-style: solid;
-  border-top-color:#333333;
-  
-  margin-top: 15px;
   padding-right: 15px;
-
   border-right-width:2px;
   border-right-color: #333333;
+  border-top-color:#333333; 
   border-right-style: solid;
-  height:10px;
 }
 
 #leftbar, #rightbar {
   /*height :120px;*/
+  height:10px;
+  border-top-width: 2px;
+  border-top-style: solid;
+  margin-top: 15px;
 }
 
 .split h1{
   font-size: 100px;
   padding-top: 40%;
+}
+
+#rightbar, .right h1{
+  margin-left: 10px;
+}
+
+#leftbar, .left h1{
+  margin-right: 10px;
 }
 
 .split ul{
@@ -149,10 +137,6 @@ a{
   padding-right: 20px;
 }
 
-
-
-
-
 /*****************************************************************************/
 /*
 /* Home
@@ -177,15 +161,79 @@ h2{
   width: 200px;
   text-align: justify;
   line-height: 1.5;
-  float: left;
-  margin:  50px 30px 0 30px;
+  margin:  20px 30px 0 30px;
+  float:left;
+}
+
+.bar{
+  height: 10px;
+  border-top-style: solid;
+  border-left-style: solid;
+  border-color: 333;
+  overflow: visible;
 }
 
 .wrap{
-  display: table;
-  margin: 0 auto;
-  margin-top: 50px;
+  background-color: #eee;
+  width:800px;
+  float: left;
 }
+
+nav{
+  width: 20%;
+  color: #333333;
+  float: left;
+  text-align: right;
+}
+
+nav ul{
+  margin-right: 30px;
+}
+
+nav h3 {
+  margin-top: 10px;
+}
+
+nav a{
+
+}
+
+.title h2{
+  font-size: 12pt;
+  margin-left: 10px;
+  font-weight: normal;
+  margin-top: -5px;
+}
+
+.title{
+  height: 100px;
+  padding-left: 20px;
+  padding-top:5px;
+}
+
+.tag{
+  height:0px;
+  background-color: #ddd;
+  -webkit-transition: height .5s;
+  overflow: hidden;
+  padding-top: 30px;
+  border-bottom-style: solid;
+  border-bottom-width: 5px;
+  border-bottom-color: #ddd;
+}
+
+.tag:hover{
+  height:100px;
+    }
+
+
+img{
+  width:800px;
+  height: 200px;
+  overflow: scroll;
+  margin:0;
+}
+
 /*****************************************************************************/
 /*
 /* Posts
@@ -215,13 +263,13 @@ h2{
 
 /* terminal */
 .post pre.terminal {
-  border: 1px solid #000;
-  background-color: #333;
-  color: #FFF;
+  border: 1px solid #000000;
+  background-color: #333333;
+  color: #FFFFFF;
 }
 
 .post pre.terminal code {
-  background-color: #333;
+  background-color: #333333;
 }
 
 /*****************************************************************************/
@@ -232,7 +280,7 @@ h2{
 
 
 .footer {
-  position: absolute;
+  position: relative;
   height: 20px; /* .push must be the same height as .footer */
   bottom:0;
   width: 100%;
