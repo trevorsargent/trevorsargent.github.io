@@ -1,0 +1,9 @@
+---
+title: Let Me Go Home
+date: 2012-08-19
+clickThrought:
+imageSource: let-me-go-home...
+---
+
+
+at sfo they sometimes do this thing, because they have 2 separate and parallel runways, where they land 2 planes at the exact same time,  right next to each other. they might to it elsewhere too, but i've only ever seen it at sfo. this graceful dance of the gas-guzzlers was a heartwarming reminder of just how awesome san francisco is. as i landed, i got to watch another plane fly in right next to me, over beautiful salt beds, in front of the fog pouring over the costal range, the sun going down behind. that same sun that had been shining on me for the past 20 hours, because that's how astronomy works when you fly west. i was coming home from being away, in various european and scandinavian countries, for a total of 7 weeks. that is the longest i have ever been away from san francisco. (i actually only just realized that). before that, i had been to france for 3 weeks, and that was my longest trip. this was more than double that. this trip also marked the farthest north (ålesund, norway) and farthest east (berlin, germany) (i count new zealand and china as west...) i have ever been. it also ties my record for most countries visited in one trip (previously the 3 week trip to france, england, and wales). in roughly 9 days, i will be leaving san francisco for the longest single stretch of time yet. i'm going to college next tuesday, and i can't believe i just typed that. part of me is very very ready to be in college, and part of me is very very not ready to be in college. the part that is ready will win, obviously, because i'm going. the first semester of college is roughly 2 and a half times as long as the trip i just took. (also just figured that out), and it is possible that i wont be back in san francisco before the end of that. and im not sure i like that. hopefully portland will become a home of sorts.
