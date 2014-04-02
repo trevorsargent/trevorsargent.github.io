@@ -1,6 +1,46 @@
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
+{% include head.html %}
 
-<div class="post">
-{{ content }}
+<style type="text/css">
+
+body{
+	background: url("{{site.baseurl}}/images/paper.png");
+}
+
+.title a:hover{
+	background: rgba(51, 51, 51, 0.6);
+}
+
+#section{
+	color:#333333;
+}
+
+.title h2{
+	color:#333333;
+}
+
+
+</style>
+
+<div class = "title">
+	<h1><a href = "{{site.baseurl}}/"> Trevor Sargent</a></h1>
+	<h2>{{page.title}}</h2>
+	{% include nav.html %}
 </div>
+
+
+<div class='wrap'>
+
+	
+		
+	<div class="post">
+
+		<a href="{{page.click}}/"><img src="{{site.baseurl}}/images/posts/{{page.image}}.jpg")>
+		</a>
+		<p class="meta">{{ page.date | date_to_string }}</p>
+		{{ content }}
+	</div>
+
+</div>
+
+
+{% include foot.html %}
