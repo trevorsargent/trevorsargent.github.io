@@ -1,8 +1,10 @@
 ---
+
+layout: post
 title: A Year for the Books 2013
 date: 2013-01-01
 clickThrought: http://500px.com/photo/21552171
-imageSource: crystalline
+image: crystalline
 ---
 
 

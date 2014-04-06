@@ -1,7 +1,9 @@
 ---
+
+layout: post
 title: Close to Godliness
 date: 2012-07-06
-imageSource: close-to-godliness
+image: close-to-godliness
 clickThrought:
 ---
 

@@ -1,9 +1,11 @@
 ---
+
+layout: post
 title: Meanwhile on a Canal
 date: 2012-08-06
 
 clickThrought:
-imageSource: amsterdam-window
+image: amsterdam-window
 ---
 
 ill start back in berlin

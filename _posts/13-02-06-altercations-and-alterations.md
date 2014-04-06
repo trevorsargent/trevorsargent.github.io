@@ -1,8 +1,10 @@
 ---
+
+layout: post
 title: Altercations and Alterations
 date: 2013-02-06
 clickThrought:
-imageSource: alterations
+image: alterations
 ---
 
 

@@ -1,7 +1,8 @@
 ---
+layout: post
 title: Berlin for a Month
 date: 2012-07-02
-imageSource: berlin
+image: berlin
 clickThrough: 
 ---
 

@@ -1,7 +1,8 @@
 ---
+layout: post
 title: Never Gonna Give You Up
 date: 2012-06-29
-imageSource: late
+image: late
 clickThrough: http://500px.com/photo/12280427
 ---
 

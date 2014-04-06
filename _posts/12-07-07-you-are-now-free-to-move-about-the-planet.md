@@ -1,7 +1,9 @@
 ---
+
+layout: post
 title: You Are Now Free to Move About the Planet
 date: 2012-07-07
-imageSource: you-are-now-free-to-move-about-the-planet
+image: you-are-now-free-to-move-about-the-planet
 clickThrought:
 ---
 

@@ -1,8 +1,10 @@
 ---
+
+layout: post
 title: 30 Days Hath... January?
 date: 2013-01-20
 clickThrought:
-imageSource: 30%20days
+image: 30%20days
 ---
 
 i'm going back to school tomorrow. back to portland. back to the bubble of college life that operates on a fake currency.

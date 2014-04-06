@@ -1,8 +1,10 @@
 ---
+
+layout: post
 title: This Time Last Year
 date: 2013-06-07
 clickThrought: http://500px.com/photo/36929378
-imageSource: extended.jpg
+image: extended
 ---
 
 this time last year was important.

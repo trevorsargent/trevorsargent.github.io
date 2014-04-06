@@ -1,7 +1,9 @@
 ---
+
+layout: post
 title: Fly Me to the Moon, or Yet Another Attempt to Explain Cruising
 date: 2012-08-16
-imageSource: norway-fjord
+image: norway-fjord
 ---
 
 i would have gone to amsterdam anyway, and i will be back, but this summer, it was serving as a jumping off point for a cruise to norway. (more on the cruise half of that later. i was very excited to go to norway, looking back, i had no specific reason to be excited for norway, but it's north, (i have this strange fascination with the extremities of the light and dark at latitudes above 60º north or south), there are fjords (insert hitchhikers guide to the galaxy reference here...slartibartfast...), and it's a part of the world i have not been to yet (scandinavia!). so norway it was. as it usually does, the cruise started out with a day at sea, in which you can get to know your new home for the next few days as it travels north at the blazing fast speed of about 20 miles an hour. you can wander up and down the 1000 foot long ship, its 12 passenger decks. (3 crew decks not included).

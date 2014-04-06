@@ -1,8 +1,11 @@
 ---
+
+layout: post
 title: Abstraction
 date: 2013-03-12
+
+image: abstraction
 clickThrought: http://500px.com/photo/28052657
-imageSource: abstraction
 ---
 
 

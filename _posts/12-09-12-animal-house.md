@@ -1,8 +1,10 @@
 ---
+
+layout: post
 title: Animal House or How to Make Your Bed from Underneath
 date: 2012-09-12 
 clickThrought: http://500px.com/photo/13113473
-imageSource: commuter
+image: commuter
 ---
 
 many many people tried to tell me what to expect when moving to college. they hit most of the highlights, but there were some over-estimations and some shocking omissions.

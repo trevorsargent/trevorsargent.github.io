@@ -1,8 +1,10 @@
 ---
+
+layout: post
 title: Let Me Go Home
 date: 2012-08-19
 clickThrought:
-imageSource: let-me-go-home...
+image: let-me-go-home...
 ---
 
 
