@@ -1,9 +1,14 @@
 {% include head.html %}
 {% include  nav.html %}
 
-<div class="jumbotron" id = "homeJumbo">
+<div class="jumbotron hidden-xs homeJumbo" id = "normalJumbo">
 	<div class="container">
-		<h2 id = "jumboText">Designer. Developer. Student.</h2>
+		<h2 class = "jumboText">Designer. Developer. Student.</h2>
+	</div>
+</div>
+<div class="jumbotron visible-xs homeJumbo">
+	<div class="container">
+		<h2 class="jumboText">Designer.</br>Developer.</br>Student.</h2>
 	</div>
 </div>
 
