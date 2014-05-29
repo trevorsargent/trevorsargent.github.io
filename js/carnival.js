@@ -33,9 +33,9 @@ function Place(){
 	objects;
 	lookAroundText;
 
-	function describe(){
-		if(this.surroundings["left"] != )
-	}
+	// function describe(){
+	// 	if(this.surroundings["left"] != )
+	// }
 	
 }
 
@@ -54,9 +54,9 @@ $(document).ready(function() {
 
 	welcome();
 
-	setUp();
+	// setUp();
 
-	player1 = new Person();
+	//player1 = new Person();
 
 
 	$("form").submit(function() {
@@ -66,8 +66,7 @@ $(document).ready(function() {
 		
 		switch (input){
 			case 'help':
-				cout(' ');
-				cout('helpful commands:');
+				cout('possible commands:');
 				cout('- look around');
 				cout('(returns a description of your surroundings)');
 				cout('- pockets');
