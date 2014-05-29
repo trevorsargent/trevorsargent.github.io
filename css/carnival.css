@@ -1,8 +1,35 @@
-#carnivalImage{
-	background: url(../images/carnival.jpg);
+body{
+	background: #000000 url(../images/carnival.jpg) no-repeat;
+	background-size: 100%;
+}
+
+
+
+.blackWrap{
+	background-color: rgba(0,0,0,.8);
+	color: #eee;
+	padding: 25px;
+	border-radius:4px;
+	box-shadow: 0px 0px 10px black;
+
+	text-shadow:0px 0px 5px #999;
+	font-family: monospace;
+	letter-spacing: 1px;	
+	text-align: center;
 }
 
 #console{
-
+	height: 450px;
+	text-align: left;
+	overflow: scroll;
 }
 
+form{
+	font-family: monospace;
+	letter-spacing: 1px;	
+}
+
+.navbar-brand{
+	font-family: monospace;
+	letter-spacing: 1px;	
+}

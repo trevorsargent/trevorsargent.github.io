@@ -5,19 +5,16 @@ title: Carnival
 
 <link rel="stylesheet" href="{{site.baseurl}}/css/carnival.css">
 
-<div class="jumbotron" id="carnivalImage">
-	
+
+<div class="container">
+	<div class="visible-xs blackWrap">
+	<p>this adventure not coded for mobile screens just yet - hang in there :)</p>
+	</div>
 </div>
 
-<div id="container">
-	<div class="col-sm-12"id="console">
 
-		<p>welcome</p>
-
-		<!--
-		MAIN GAME PLOT
-		-->
-
+<div class="container hidden-xs">
+	<div class="col-sm-12 blackWrap"id="console">
 		<!--
 		ALLOWS CONTENT TO BE INSERTED BEFORE THIS
 		-->
@@ -29,13 +26,13 @@ title: Carnival
 	<!--
 	INPUT
 	-->
-	<div class="navbar navbar-inverse navbar-fixed-bottom">
-		<div class="container">
-			<div class="navbar-brand">carnival</div>
-			<div class="form-group">
-				<form class="navbar-form" onsubmit="return false;">
-					<input type="text" id="command_line" class="form-control"  size="50" autofocus="autofocus" placeholder="type a command... (help if you're stuck)"/>
-				</form>
-			</div>
+<div class="navbar navbar-inverse navbar-fixed-bottom hidden-xs">
+	<div class="container">
+		<div class="navbar-brand">carnival</div>
+		<div class="form-group">
+			<form class="navbar-form" onsubmit="return false;">
+				<input type="text" id="command_line" class="form-control"  size="50" autofocus="autofocus" placeholder="type a command... ('help' if you're stuck)"/>
+			</form>
 		</div>
 	</div>
+</div>
