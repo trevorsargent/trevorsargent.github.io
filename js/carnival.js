@@ -18,7 +18,13 @@ function welcome() {
     println('-----------------------------');
     println('| welcome to the carnival!! |');
     println('-----------------------------');
+    println('there are lots of fun things here');
+    println('enjoy yourself. we demend it.');
     line();
+}
+
+function Inventory(){
+
 }
 
 function Person() {
@@ -146,7 +152,7 @@ $(document).ready(function() {
             input = input.trim();
             var walking = false;
             if (player1.currentLocation.name == input) {
-            	println("you are already at the " + input);
+                println("you are already at the " + input);
             } else if (player1.currentLocation.left.name == input) {
                 player1.walkTo(player1.currentLocation.left);
                 walking = true;
@@ -159,15 +165,25 @@ $(document).ready(function() {
             } else if (player1.currentLocation.behind.name == input) {
                 player1.walkTo(player1.currentLocation.behind);
                 walking = true;
-            }else{
-            	println("that's not a place you can walk to from here");
+            } else {
+                println("that's not a place you can walk to from here");
             }
-
             if (walking) {
                 println("walking to the " + player1.currentLocation.name + "...");
                 line();
                 println(player1.currentLocation.describe());
             }
+        } else if (input.indexOf("take") > -1) {
+        	input = input.replace("take", "");
+        	input = input.trim();
+            
+        } else if (true) {
+
+        } else if (true) {
+
+        } else if (true) {
+
+        } else if (true) {
 
         } else {
             println("command invalid");
