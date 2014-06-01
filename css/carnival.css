@@ -38,3 +38,7 @@ form{
 	font-family: monospace;
 	letter-spacing: 1px;	
 }
+
+p{
+	margin: 0;
+}
