@@ -40,6 +40,7 @@ function Person() {
     this.money = 0;
     this.currentLocation = {};
     this.pockets = ["dollar", "quarter", "phone", "flashlight", "wrench", "envelope"];
+    this.paid = false;
 
     this.walkTo = function valkTo(Place) {
         this.currentLocation.beenHere = true;
@@ -85,9 +86,10 @@ function Place() {
     this.behind = {};
     this.objects = [];
     this.newText = "";
-    beenHere = false;
+    this.beenHere = false;
+    this.isRide = false;
 
-    this.describe = function() {
+    this.description = function() {
         var toReturn = "you're standing in the " + this.name + ".";
         if (this.left.name != undefined) {
             toReturn += "</br>on your left is the " + this.left.name + ".";
@@ -101,7 +103,7 @@ function Place() {
         if (this.behind.name != undefined) {
             toReturn += "</br>behind you is the " + this.behind.name + ".";
         }
-        if (!this.beenHere) {
+        if (!this.beenHere && this.newText != "") {
             toReturn += "</br></br>" + this.newText + ".";
         }
         return toReturn;
@@ -139,7 +141,7 @@ function setUp() {
     ticketEntrance.name = "ticket entrance";
     ticketEntrance.ahead = mainSquare;
     ticketEntrance.behind = parkingLot;
-    ticketEntrance.newText = "it looks like you need to have a ticket to get in";
+    ticketEntrance.newText = "god this place is run down...";
     //items
     ticketEntrance.objects.push("ticket");
     ticketEntrance.objects.push("attendant");
@@ -156,6 +158,7 @@ function setUp() {
     //ferrisWheel
     ferrisWheel.name = "ferris wheel";
     ferrisWheel.behind = mainSquare;
+    ferrisWheel.isRide = true;
 
     //foodCarts
     foodCarts.name = "food carts"
@@ -202,7 +205,7 @@ $(document).ready(function() {
             println('- take [item]');
 
         } else if (input.indexOf("look around") > -1) {
-            println(player.currentLocation.describe());
+            println(player.currentLocation.description());
         } else if (input.indexOf("walk to") > -1) {
             // input = input.replace("walk to", "").trim().input.replace("the", "").trim();
             input = input.replace("walk to", "");
@@ -210,34 +213,42 @@ $(document).ready(function() {
             input = input.replace("the", "");
             input = input.trim();
             var walking = false;
-            if (player.currentLocation.name == input) {
-                println("you are already at the " + input);
-            } else if (player.currentLocation.left.name == input) {
-                player.walkTo(player.currentLocation.left);
-                walking = true;
-            } else if (player.currentLocation.right.name == input) {
-                player.walkTo(player.currentLocation.right);
-                walking = true;
-            } else if (player.currentLocation.ahead.name == input) {
-                player.walkTo(player.currentLocation.ahead);
-                walking = true;
-            } else if (player.currentLocation.behind.name == input) {
-                player.walkTo(player.currentLocation.behind);
-                walking = true;
-            } else {
-                println("that's not a place you can walk to from here");
+            if(player.currentLocation == ticketEntrance && input.indexOf("main square") > -1 && !player.paid){
+                println("it looks like you have to have a ticket to enter");
+            }else{
+                if (player.currentLocation.name == input) {
+                    println("you are already at the " + input);
+                } else if (player.currentLocation.left.name == input) {
+                    player.walkTo(player.currentLocation.left);
+                    walking = true;
+                } else if (player.currentLocation.right.name == input) {
+                    player.walkTo(player.currentLocation.right);
+                    walking = true;
+                } else if (player.currentLocation.ahead.name == input) {
+                    player.walkTo(player.currentLocation.ahead);
+                    walking = true;
+                } else if (player.currentLocation.behind.name == input) {
+                    player.walkTo(player.currentLocation.behind);
+                    walking = true;
+                } else {
+                    println("that's not a place you can walk to from here");
+                }
             }
+
             if (walking) {
                 println("walking to the " + player.currentLocation.name + "...");
                 line();
-                println(player.currentLocation.describe());
+                println(player.currentLocation.description());
             }
         } else if (input.indexOf("take") > -1) {
             input = input.replace("take", "");
             input = input.trim();
             input = input.replace("the", "");
             input = input.trim();
-            if (!player.take(input, player.currentLocation)) {
+            if(player.currentLocation == ticketEntrance && input.indexOf("ticket") > -1 && !player.paid){
+                println("you have to pay for your ticket");
+            } 
+            else if (!player.take(input)) {
                 println("there isn't " + addArticle(input) + " so you can't take it.")
             }
         } else if (input.indexOf("drop") > -1) {
@@ -245,10 +256,15 @@ $(document).ready(function() {
             input = input.trim();
             input = input.replace("the", "");
             input = input.trim();
+            if(player.currentLocation == ticketEntrance && input.indexOf("dollar") > -1){
+                player.paid = true;
+                println('the attendat says, "thank you - here is your ticket..." ');
+            }
             if (!player.drop(input)) {
                 println("you dont have " + addArticle(input) + " so you can't drop one.")
             }
         } else if (input.indexOf("pockets") > -1) {
+
             println(player.emptyPockets());
         } else if (input.indexOf("items") > -1) {
             // println("HI");
