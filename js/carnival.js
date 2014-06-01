@@ -239,7 +239,7 @@ $(document).ready(function() {
 
         if (input.indexOf("help") > -1) {
             println('possible commands:');
-            println('- surroundings');
+            println('- look around');
             // println('(returns a description of your surroundings)');
             println('- pockets');
             // println('(returns a list of everything you have in your pockets)');
