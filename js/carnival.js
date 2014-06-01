@@ -51,12 +51,12 @@ function Person() {
         var itemIndex = this.currentLocation.objects.indexOf(string);
         if (itemIndex > -1) {
             if(this.currentLocation.isShop){var thing = this.currentLocation.objects.splice(itemIndex, 1);
-            this.pockets.push(string);
-            return true;
-        } else {
-            return false;
+                this.pockets.push(string);
+                return true;
+            } else {
+                return false;
+            }
         }
-    }
 
     this.drop = function drop(string) {
         var itemIndex = this.pockets.indexOf(string);
@@ -76,6 +76,8 @@ function Person() {
         }
         return toReturn;
     }
+
+}
 }
 
 function Place() {
