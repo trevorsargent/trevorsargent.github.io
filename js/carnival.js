@@ -29,7 +29,7 @@ function welcome() {
     println('| welcome to the carnival!! |');
     println('-----------------------------');
     println('there are lots of fun things here');
-    println('enjoy yourself. we demend it.');
+    println('enjoy yourself. we demand it.');
     line();
 }
 
