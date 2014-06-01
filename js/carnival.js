@@ -50,7 +50,7 @@ function Person() {
     this.take = function take(string) {
         var itemIndex = this.currentLocation.objects.indexOf(string);
         if (itemIndex > -1) {
-            var thing = this.currentLocation.objects.splice(itemIndex, 1);
+            if(this.currentLocation.isShop){var thing = this.currentLocation.objects.splice(itemIndex, 1);
             this.pockets.push(string);
             return true;
         } else {
@@ -88,6 +88,8 @@ function Place() {
     this.newText = "";
     this.beenHere = false;
     this.isRide = false;
+    this.isGame = false;
+    this.isShop = false;
 
     this.description = function() {
         var toReturn = "you're standing in the " + this.name + ".";
@@ -129,8 +131,16 @@ function setUp() {
     ticketEntrance = new Place();
     mainSquare = new Place();
     ferrisWheel = new Place();
-    foodCarts = new Place();
+
+    lawn = new Place();
+    tiltaWhirl = new Place();
+    cottonCandy = new Place();
+    cornDogs = new Place();
+
     arcade = new Place();
+    skeeBall = new Place();
+    whackaMole = new Place();
+    pinBall = new Place();
 
     //set up LOCATIONS
     //parking lot
@@ -146,27 +156,60 @@ function setUp() {
     ticketEntrance.objects.push("ticket");
     ticketEntrance.objects.push("attendant");
 
-
-
     //mainSquare
     mainSquare.name = "main square";
-    mainSquare.ahead = ferrisWheel;
-    mainSquare.left = foodCarts;
-    mainSquare.right = arcade;
     mainSquare.behind = ticketEntrance;
+    mainSquare.ahead = ferrisWheel;
+    mainSquare.left = lawn;
+    mainSquare.right = arcade;
 
     //ferrisWheel
     ferrisWheel.name = "ferris wheel";
     ferrisWheel.behind = mainSquare;
     ferrisWheel.isRide = true;
 
-    //foodCarts
-    foodCarts.name = "food carts"
-    foodCarts.behind = mainSquare;
+    //lawn
+    lawn.name = "lawn";
+    lawn.behind = mainSquare;
+    lawn.ahead = cottonCandy;
+    lawn.left = cornDogs;
+    lawn.right = tiltaWhirl;
+
+    //cottonCandy
+    cottonCandy.name = "cotton candy stand";
+    cottonCandy.behind = lawn;
+    cottonCandy.isShop = true;
+    //items
+    cottonCandy.objects.push("cotton candy");
+
+    //cornDogs
+    cornDogs.name = "corn dog stand";
+    cornDogs.behind = lawn;
+    cornDogs.isShop = true;
+    //
+    cornDogs.objects.push("corn dog");
+
+    //tiltaWhirl
+    tiltaWhirl.name = "tilt-a-whirl";
+    tiltaWhirl.behind = lawn;
+    tiltaWhirl.isRide = true;
 
     //arcade
-    arcade.name = "arcade";
+    arcade.name = "arcade entrance";
     arcade.behind = mainSquare;
+    arcade.ahead = whackaMole;
+    arcade.left = skeeBall;
+    arcade.right = pinBall;
+
+    //whackaMole
+    whackaMole.name = "whack-a-mole";
+    whackaMole.behind = arcade;
+    whackaMole.isGame = true;
+
+    //skeeBall
+    skeeBall.name = "skeeball";
+    skeeBall.behind = arcade;
+    skeeBall.isGame = true;
 }
 
 $(document).ready(function() {
@@ -190,7 +233,6 @@ $(document).ready(function() {
         selectInput = numInputs;
         println(">> " + input);
         line();
-
         //var inputArray = input.split(" "); 
 
         if (input.indexOf("help") > -1) {
@@ -216,18 +258,18 @@ $(document).ready(function() {
             if(player.currentLocation == ticketEntrance && input.indexOf("main square") > -1 && !player.paid){
                 println("it looks like you have to have a ticket to enter");
             }else{
-                if (player.currentLocation.name == input) {
-                    println("you are already at the " + input);
-                } else if (player.currentLocation.left.name == input) {
+                if (player.currentLocation.name.indexOf(input)>-1) {
+                    println("you are already at the " + player.currentLocation.name);
+                } else if (player.currentLocation.left.name != undefined && player.currentLocation.left.name.indexOf(input)>-1) {
                     player.walkTo(player.currentLocation.left);
                     walking = true;
-                } else if (player.currentLocation.right.name == input) {
+                } else if (player.currentLocation.right.name != undefined && player.currentLocation.right.name.indexOf(input)>-1) {
                     player.walkTo(player.currentLocation.right);
                     walking = true;
-                } else if (player.currentLocation.ahead.name == input) {
+                } else if (player.currentLocation.ahead.name != undefined && player.currentLocation.ahead.name.indexOf(input)>-1) {
                     player.walkTo(player.currentLocation.ahead);
                     walking = true;
-                } else if (player.currentLocation.behind.name == input) {
+                } else if (player.currentLocation.behind.name != undefined && player.currentLocation.behind.name.indexOf(input)>-1) {
                     player.walkTo(player.currentLocation.behind);
                     walking = true;
                 } else {
@@ -236,9 +278,9 @@ $(document).ready(function() {
             }
 
             if (walking) {
-                println("walking to the " + player.currentLocation.name + "...");
-                line();
-                println(player.currentLocation.description());
+                println("walking to the " + player.currentLocation.name);
+                //line();
+                //println(player.currentLocation.description());
             }
         } else if (input.indexOf("take") > -1) {
             input = input.replace("take", "");
@@ -258,7 +300,7 @@ $(document).ready(function() {
             input = input.trim();
             if(player.currentLocation == ticketEntrance && input.indexOf("dollar") > -1){
                 player.paid = true;
-                println('the attendat says, "thank you - here is your ticket..." ');
+                println('the attendant says, "thank you - here is your ticket..." ');
             }
             if (!player.drop(input)) {
                 println("you dont have " + addArticle(input) + " so you can't drop one.")
