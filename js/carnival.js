@@ -39,7 +39,14 @@ function Person() {
     this.height = 0;
     this.money = 0;
     this.currentLocation = {};
-    this.pockets = ["dollar", "quarter", "phone", "flashlight", "wrench", "envelope"];
+    this.pockets2 = {
+        dollar: 3,
+        quater: 10,
+        phone: 1,
+        flashlight: 1,
+        wrench: 1,
+        envelope: 1
+    };
     this.paid = false;
 
     this.walkTo = function valkTo(Place) {
@@ -48,21 +55,22 @@ function Person() {
     }
 
     this.take = function take(string) {
-        var itemIndex = this.currentLocation.objects.indexOf(string);
-        if (itemIndex > -1) {
-            if(this.currentLocation.isShop){var thing = this.currentLocation.objects.splice(itemIndex, 1);
-                this.pockets.push(string);
-                return true;
-            } else {
-                return false;
+        if (this.currentLocation.objects[string] != undefined && this.currentLocation.objects[string] > 0) {
+            if(!this.currentLocation.isShop){
+                this.currentLocation.objects[string]--;
             }
+            this.addItem(string);
+            return true;
+        } else {
+            return false;
         }
+    }
 
     this.drop = function drop(string) {
-        var itemIndex = this.pockets.indexOf(string);
-        if (itemIndex > -1) {
-            var thing = this.pockets.splice(itemIndex, 1);
-            this.currentLocation.objects.push(string);
+        
+        if (this.pockets2[string] > 0) {
+            this.pockets2[string]--;
+            this.currentLocation.addItem(string);
             return true;
         } else {
             return false;
@@ -71,13 +79,21 @@ function Person() {
 
     this.emptyPockets = function emptyPockets() {
         var toReturn = "your pockets contain: </br>";
-        for (var i = 0; i < this.pockets.length; i++) {
-            toReturn += addArticle(this.pockets[i]) + "</br>";
+        for(var item in this.pockets2){
+            console.log(item);
+            toReturn += item + ": (" + this.pockets2[item] + ") </br>";
         }
         return toReturn;
     }
 
-}
+    this.addItem = function addItem(string){
+        if(this.pockets[string] != undefined){
+            this.pockets[string] ++;
+        }else{
+            this.pockets[string] = 1;
+        }
+    }
+
 }
 
 function Place() {
@@ -86,7 +102,7 @@ function Place() {
     this.ahead = {};
     this.right = {};
     this.behind = {};
-    this.objects = [];
+    this.objects = {};
     this.newText = "";
     this.beenHere = false;
     this.isRide = false;
@@ -115,16 +131,24 @@ function Place() {
 
     this.listObjects = function listObjects() {
         var toReturn = "";
-        if (this.objects.length > 0) {
-            toReturn += "you see: "
-            for (var i = 0; i < this.objects.length; i++) {
-
-                toReturn += ("</br> " + addArticle(this.objects[i]));
+        if (Object.keys(this.objects).length > 0) {
+            toReturn += "you see: </br>"
+            for(var item in this.objects){
+                console.log(item);
+                toReturn += item + ": (" + this.objects[item] + ") </br>";
             }
         } else {
             toReturn = "there's nothing here"
         }
         return toReturn;
+    }
+
+    this.addItem = function addItem(string){
+        if(this.objects[string] != undefined){
+            this.objects[string] ++;
+        }else{
+            this.objects[string] = 1;
+        }
     }
 }
 
@@ -155,8 +179,8 @@ function setUp() {
     ticketEntrance.behind = parkingLot;
     ticketEntrance.newText = "god this place is run down...";
     //items
-    ticketEntrance.objects.push("ticket");
-    ticketEntrance.objects.push("attendant");
+    ticketEntrance.addItem("ticket");
+    ticketEntrance.addItem("attendant");
 
     //mainSquare
     mainSquare.name = "main square";
@@ -182,14 +206,14 @@ function setUp() {
     cottonCandy.behind = lawn;
     cottonCandy.isShop = true;
     //items
-    cottonCandy.objects.push("cotton candy");
+    cottonCandy.addItem("cotton candy");
 
     //cornDogs
     cornDogs.name = "corn dog stand";
     cornDogs.behind = lawn;
     cornDogs.isShop = true;
     //
-    cornDogs.objects.push("corn dog");
+    cornDogs.addItem("corn dog");
 
     //tiltaWhirl
     tiltaWhirl.name = "tilt-a-whirl";
@@ -212,6 +236,11 @@ function setUp() {
     skeeBall.name = "skeeball";
     skeeBall.behind = arcade;
     skeeBall.isGame = true;
+
+    //pinBall
+    pinBall.name = "pinball";
+    pinBall.behind = arcade;
+    pinBall.isGame = true;
 }
 
 $(document).ready(function() {
@@ -233,7 +262,8 @@ $(document).ready(function() {
         inputHistory.push(input);
         numInputs += 1;
         selectInput = numInputs;
-        println(">> " + input);
+
+        if(input.length>0){ println(">> " + input);}
         line();
         //var inputArray = input.split(" "); 
 
@@ -308,17 +338,12 @@ $(document).ready(function() {
                 println("you dont have " + addArticle(input) + " so you can't drop one.")
             }
         } else if (input.indexOf("pockets") > -1) {
-
             println(player.emptyPockets());
         } else if (input.indexOf("items") > -1) {
             // println("HI");
             println(player.currentLocation.listObjects());
-        } else if (true) {
-
-        } else if (true) {
-
         } else {
-            println("command invalid");
+            if(input.length>0){println("command invalid");}
         }
 
 
