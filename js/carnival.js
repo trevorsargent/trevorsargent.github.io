@@ -45,7 +45,8 @@ function Person() {
         phone: 1,
         flashlight: 1,
         wrench: 1,
-        envelope: 1
+        envelope: 1,
+        shovel: 1
     };
     this.paid = false;
 
@@ -87,13 +88,12 @@ function Person() {
     }
 
     this.addItem = function addItem(string){
-        if(this.pockets[string] != undefined){
-            this.pockets[string] ++;
+        if(this.pockets2[string] != undefined){
+            this.pockets2[string] ++;
         }else{
-            this.pockets[string] = 1;
+            this.pockets2[string] = 1;
         }
     }
-
 }
 
 function Place() {
@@ -102,12 +102,16 @@ function Place() {
     this.ahead = {};
     this.right = {};
     this.behind = {};
+    this.below = {};
+    this.above = {};
     this.objects = {};
     this.newText = "";
     this.beenHere = false;
     this.isRide = false;
     this.isGame = false;
     this.isShop = false;
+    this.canClimb = false;
+    this.lights = true;
 
     this.description = function() {
         var toReturn = "you're standing in the " + this.name + ".";
@@ -168,6 +172,18 @@ function setUp() {
     whackaMole = new Place();
     pinBall = new Place();
 
+    southStairsTop = new Place();
+    southStairsBottom = new Place();
+    entryHall = new Place();
+    antiChamber = new Place();
+    mainHall = new Place();
+    eastWing = new Place();
+    westWing = new Place();
+    northStairsTop = new Place();
+    northStairsBottom = new Place();
+    owlry = new Place();
+    balcony = new Place();
+
     //set up LOCATIONS
     //parking lot
     parkingLot.name = "parking lot";
@@ -192,6 +208,7 @@ function setUp() {
     //ferrisWheel
     ferrisWheel.name = "ferris wheel";
     ferrisWheel.behind = mainSquare;
+    ferrisWheel.below = southStairsTop;
     ferrisWheel.isRide = true;
 
     //lawn
@@ -241,6 +258,73 @@ function setUp() {
     pinBall.name = "pinball";
     pinBall.behind = arcade;
     pinBall.isGame = true;
+
+    //UNDERGROUND CASTLE
+
+    //southStairsTop
+    southStairsTop.name = "the top of the south stairs";
+    southStairsTop.above = ferrisWheel;
+    southStairsTop.below = southStairsBottom;
+    southStairsTop.canClimb = true;
+
+    //southStairsBottom
+    southStairsBottom.name = "the bottom of the south stairs";
+    southStairsBottom.above = southStairsTop;
+    southStairsBottom.ahead = entryHall;
+    southStairsBottom.lights = false;
+
+    //entryHall
+    entryHall.name = "entrance hall";
+    entryHall.ahead = antiChamber;
+    entryHall.lights = false;
+    entryHall.newText = "just as you turn to look about, there's a low rumbling, and the doorway through which you just entered has vanished. there is no coming back the way you came. god hope you have your ticket with you"
+    // entryHall.addItem("");
+    //antiChamber
+    antiChamber.name = "antichamber";
+    antiChamber.behind = entryHall;
+    antiChamber.ahead = mainHall;
+    antiChamber.lights = false;
+
+    //mainHall
+    mainHall.name = "main hall";
+    mainHall.behind = antiChamber;
+    mainHall.ahead = northStairsBottom;
+    mainHall.left = westWing;
+    mainHall.right = eastWing;
+    mainHall.lights = false;
+
+    //eastWing
+    eastWing.name = "east wing";
+    eastWing.behind = mainHall;
+    eastWing.lights = false;
+
+    //westWing
+    westWing.name = "west wing";
+    westWing.behind = mainHall;
+    westWing.lights = false;
+
+    //northStairsBottom
+    northStairsBottom.name = "bottom of the north stairs";
+    northStairsBottom.behind = mainHall;
+    northStairsBottom.above = northStairsTop;
+    northStairsBottom.canClimb = true;
+    northStairsBottom.lights = false;
+
+    //northStairsTop
+    northStairsTop.name = "top of the north stairs";
+    northStairsTop.below = northStairsBottom;
+    northStairsTop.ahead = owlry;
+    northStairsTop.canClimb = true;
+    
+
+    //owlry
+    owlry.name = "owlry";
+    owlry.behind = northStairsTop;
+    owlry.left = balcony;
+
+    // balcony
+    balcony.name = "balcony";
+    balcony.behind = owlry;
 }
 
 $(document).ready(function() {
@@ -320,9 +404,9 @@ $(document).ready(function() {
             input = input.replace("the", "");
             input = input.trim();
             if(player.currentLocation == ticketEntrance && input.indexOf("ticket") > -1 && !player.paid){
-                println("you have to pay for your ticket");
-            } 
-            else if (!player.take(input)) {
+                println("you have to pay for your ticket")
+            }
+            else if (player.paid && !player.take(input)) {
                 println("there isn't " + addArticle(input) + " so you can't take it.")
             }
         } else if (input.indexOf("drop") > -1) {
@@ -342,6 +426,21 @@ $(document).ready(function() {
         } else if (input.indexOf("items") > -1) {
             // println("HI");
             println(player.currentLocation.listObjects());
+        } else if(input.indexOf("climb") > -1){
+            if(player.currentLocation.canClimb && player.currentLocation.above != undefined){
+                player.walkTo(player.currentLocation.above)
+            }
+        } else if(input.indexOf("go down")> -1){
+            if(player.currentLocation.canClimb && player.currentLocation.below != undefined){
+                player.walkTo(player.currentLocation.below);
+            }
+        } else if(input.indexOf("dig")> -1){
+            if(player.currentLocation.below != undefined && player.pockets2["shovel"] > 0){
+                player.currentLocation = player.currentLocation.below;
+                println("you dropped down into the " + player.currentLocation.name);
+            }
+        } else if(false){
+
         } else {
             if(input.length>0){println("command invalid");}
         }

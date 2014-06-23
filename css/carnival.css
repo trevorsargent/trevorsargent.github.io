@@ -25,7 +25,7 @@ body{
 #console{
 	/*height: 450px;*/
 	text-align: left;
-	overflow: scroll;
+	overflow: auto;
 	padding-bottom: 90px;
 }
 
