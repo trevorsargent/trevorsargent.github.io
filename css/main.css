@@ -1,4 +1,4 @@
-@-webkit-keyframes floatIn{
+/*@-webkit-keyframes floatIn{
 	from{
 		opacity: 0;
 		padding-top: 100px;
@@ -56,4 +56,94 @@
 
 body{
 	padding-top: 50px;
+}*/
+
+body{
+	font-family: Lato;
+	color: #425d66 ;
+}
+
+
+.header{
+	background-color: #daecf1;
+	height: 110px;
+	padding: 30px;
+	border-bottom: solid 1px #425d66;
+}
+
+.button-box{
+	height:48px;
+	width: 144px;
+	border: 3px solid transparent;
+	text-align: center;
+	cursor: pointer;
+}
+
+.button-secondary, .button-normal:hover{
+	border: 3px solid #425d66;
+}
+
+.button-secondary:hover{
+	background-color: #425d66;
+	color:#daecf1;
+}
+
+.vert-center {
+  position: relative;
+  top: 1px;
+  /*transform: translateY(-25%);*/
+}
+.nav .button-box{
+	float: left;
+}
+
+#slider{
+	/*visibility: hidden;*/
+	overflow: hidden;
+	height: 48px;
+}
+
+#slider .button-box{
+	margin-left: 40px;
+}
+
+h6 {
+	font-size: 17px;
+}
+
+#plus-glyph{
+	font-size:30px;
+	top:-7px;	
+}
+
+.image-wrapper{
+	position: absolute;
+	top: 110px;
+	width:100%;
+	bottom: 0px;
+	background-image: url(../images/field.jpg);
+	background-size: cover;
+}
+
+.color-wrapper{
+	position: absolute;
+	top:0px;
+	width:100%;
+	bottom: 0px;
+	background-color: rgba(218, 236, 241, .7);
+	
+}
+
+.center-square{
+	border:solid 10px #425d66;
+	width:567px;
+	height: 142px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 200px;	
+	font-size: 100px;
+	text-align: center;
+	letter-spacing: 35px;
+	padding-left: 20px;
+	z-index: 10;
 }
