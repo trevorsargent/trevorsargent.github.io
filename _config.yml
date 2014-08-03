@@ -2,3 +2,10 @@ name: Trevor Sargent
 markdown: redcarpet
 pygments: true
 baseurl: 
+
+collections: 
+  design_portfolio:
+    output: true  
+
+  development:	
+    output: true 

@@ -1,0 +1,12 @@
+---
+layout: default
+title: Design Portfolio
+---
+
+<ul class="portfolio-list">
+	{% for post in site.design_portfolio %}
+    <li>
+      <a href="{{ post.url }}"><span class"date">{{ post.date | date: '%b %d, %Y' }}</span> | {{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
