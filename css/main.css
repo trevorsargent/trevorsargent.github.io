@@ -130,7 +130,7 @@ h6 {
 	top:0px;
 	width:100%;
 	bottom: 0px;
-	background-color: rgba(218, 236, 241, .7);
+	background-color: rgba(218, 236, 241, .7); /*lighter color */
 	
 }
 
@@ -150,4 +150,26 @@ h6 {
 
 .spin{
 	-webkit-transform:rotate(90deg);
+}
+
+a, a:hover{
+	text-decoration: none;
+	color:#425d66;
+}
+
+.portfolio-list{
+	padding-top: 50px;
+}
+
+.line-item:hover{
+	background-color: rgba(218, 236, 241, .5);
+}
+
+.image-container{
+	float: left;
+}
+
+.image-container img{
+	width: 100%;
+	height: auto;
 }
