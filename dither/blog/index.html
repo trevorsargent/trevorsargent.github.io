@@ -4,9 +4,9 @@ layout: default
 image: field
 ---
 
-<ul>
+<ul class = 'post-list'>
   {% for post in site.posts %}
-    <li>
+    <li class="post-link">
       <a href="{{ post.url }}"><span class"date">{{ post.date | date: '%b %d, %Y' }}</span> | {{ post.title }}</a>
     </li>
   {% endfor %}

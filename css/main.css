@@ -61,7 +61,10 @@ body{
 body{
 	font-family: Lato;
 	color: #425d66 ;
-}
+	background: #daecf1;/*
+	background-image: url(../images/field.jpg);
+	background-size: cover;
+*/}
 
 
 .header{
@@ -116,22 +119,8 @@ h6 {
 	top:-7px;	
 }
 
-.image-wrapper{
-	position: absolute;
-	top: 110px;
-	width:100%;
-	bottom: 0px;
-	background-image: url(../images/field.jpg);
-	background-size: cover;
-}
-
-.color-wrapper{
-	position: absolute;
-	top:0px;
-	width:100%;
-	bottom: 0px;
-	background-color: rgba(218, 236, 241, .7); /*lighter color */
-	
+.container{
+	padding-bottom: 70px;
 }
 
 .center-square{
@@ -157,19 +146,30 @@ a, a:hover{
 	color:#425d66;
 }
 
-.portfolio-list{
+.portfolio-list, .blog-list, .post{
 	padding-top: 50px;
 }
 
-.line-item:hover{
+.item:hover{
 	background-color: rgba(218, 236, 241, .5);
 }
 
 .image-container{
-	float: left;
+	max-height: 150px;
+	max-width: 250px;
+	overflow: hidden;
 }
 
 .image-container img{
 	width: 100%;
 	height: auto;
+}
+
+.post-list{
+	padding-top: 50px;
+}
+
+.post-list li{
+	list-style: none;
+	padding-top: 7px;
 }

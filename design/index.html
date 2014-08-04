@@ -4,7 +4,7 @@ title: Design Portfolio
 ---
 
 <div class="portfolio-list">
-	{% for post in site.design_portfolio %}
+	{% for post in site.design_portfolio reversed %}
 	<div class = 'line-item'>
       <a class ='row' href="{{ post.url }}">
       	<div class = 'col-sm-3'>
