@@ -3,21 +3,12 @@ layout: default
 title: Design Portfolio
 ---
 
-<div class="portfolio-list">
-	{% for post in site.design_portfolio reversed %}
-	<div class = 'line-item'>
-      <a class ='row' href="{{ post.url }}">
-      	<div class = 'col-sm-3'>
-      		<div class="image-container">
-      			<img src="{{site.baseurl}}/images/portfolio/{{post.img}}.jpg" alt="">
-      		</div>
-      	</div>
-      	<div class="col-sm-9 col-xs-10">
-      		<h3>{{ post.title }}</h3>
-      		<h4>{{ post.date | date: '%B, %Y'}}</h4> 
-      		<h4>Role: {{post.role}}</h4>
-      	</div>
-      </a>
-	</div>
-  {% endfor %}
-</div>
+{% for post in site.design_portfolio reversed %}
+      <div class="row">
+            <div class="col-sm-12">
+                  <h2>{{post.title}}</h2>
+                  <h3>{{post.date}}</h3>
+                  <p><a href="{{post.url}}">Look at Post!</a></p>
+            </div>
+      </div>
+{% endfor %}

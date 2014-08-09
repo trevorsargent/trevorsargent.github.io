@@ -8,4 +8,4 @@ collections:
     output: true  
 
   development:	
-    output: true 
+    output: false 
