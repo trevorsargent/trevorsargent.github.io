@@ -7,5 +7,5 @@ collections:
   design_portfolio:
     output: true  
 
-  development:	
+  development_projects:	
     output: false 
