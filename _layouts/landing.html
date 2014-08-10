@@ -1,62 +1,21 @@
-{% include head.html %}
-{% include  nav.html %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ page.title }}</title>
+        
+        <link rel="stylesheet" href="{{ site.baseurl}}/css/bootstrap.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Neuton:200,400' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" >
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/landing.css">
+    </head>
+    <body>
+
+{{content}}    
 
 
-<!-- </div> -->
 
-<!-- <div class="carousel slide hidden-xs banner" id="myCarousel">
-	<ol class="carousel-indicators">
-		<li data-target="#myCarousel" data-slide-to="0" class = "active"></li>
-		<li data-target="#myCarousel" data-slide-to="1"></li>
-		<li data-target="#myCarousel" data-slide-to="2"></li>
-	</ol>
-
-	<div class="carousel-inner">
-		<div class="item active">
-			<img src="{{site.baseurl}}/images/carousel/field.jpg" alt="field">
-			<div class="carousel-caption">
-				<h1>Designer</h1>
-				<p>theatrical scenery and lighting</p>
-			</div>
-		</div>
-		<div class="item">
-			<img src="{{site.baseurl}}/images/carousel/blade.jpg" alt="field" class = "img-responsive">
-			<div class="carousel-caption">
-				<h1>Developer</h1>
-				<p>freelance web designer and developer</p>
-			</div>
-		</div>
-		<div class="item">
-			<img src="{{site.baseurl}}/images/carousel/bridge.jpg" alt="field" class = "img-responsive">
-			<div class="carousel-caption">
-				<h1>Student</h1>
-				<p>haha</p>
-			</div>
-		</div>
-	</div>
-
-	<a href="#myCarousel" class="carousel-control left" data-slide="prev">
-		<span class="glyphicon glyphicon-chevron-left"></span>
-	</a>
-
-	<a href="#myCarousel" class="carousel-control right" data-slide="next">
-		<span class="glyphicon glyphicon-chevron-right"></span>
-	</a>
-
-</div> -->
-<!-- <div class="jumbotron visible-xs homeJumbo banner">
-	<div class="container">
-		<h2>Designer.</br>Developer.</br>Student.</h2>
-	</div>
-</div> -->
-
-<!-- <div class="image-wrapper"> -->
-	<!-- <div class="color-wrapper"> -->
-		<div class="container">
-			{{content}}
-		</div>
-	<!-- </div> -->
-<!-- </div> -->
 
 {% include scripts.html %}
 {% include foot.html %}
