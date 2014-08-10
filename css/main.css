@@ -1,3 +1,7 @@
+/**********/
+/*GENERAL */
+/**********/
+
 body{
 	padding-top: 70px;
 }
@@ -9,16 +13,10 @@ h1{
 
 .dropdown-menu{
 	box-shadow: none;
-	border-radius: 0px;
+	/*border-radius: 0px;*/
 }
 
-.center{
-	height: 100px;
-	background-color: rgba(0,0,0,.5);
-	margin-top: 200px;
-	color: white;
-	text-align: center;
-	/*border: solid gray 1px;*/
-	padding: 10px;
-	/*border-radius: 2px;*/
-}
+/**********/
+/*BLOG    */
+/**********/
+
