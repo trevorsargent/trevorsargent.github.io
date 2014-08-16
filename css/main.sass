@@ -4,19 +4,22 @@
 $registration: #555
 $accent: #b20000
 $highlight: #eee
+$background: rgba(255,255,255, .9)
 /**********/
 /*LANDING */
 /**********/
 
 .landing
 	text-align: center
-	// letter-spacing: 1px
-	font-weight: 100
+	letter-spacing: 1px
+	margin-top: 50px
 
 	.title
+		font-weight: 100
 		font-size: 200px
 	.choose
-		font-size: 30px
+		font-size: 25px
+		font-weight: 300
 
 
 /**********/
@@ -28,7 +31,7 @@ $highlight: #eee
 .navbar
 
 	border-bottom: none
-	background-color: white
+	background-color: $background
 
 	.collapse
 		border-bottom: 1px $highlight solid	
@@ -43,7 +46,7 @@ $highlight: #eee
 .navbar-default .navbar-nav>.open>a:hover,
 .navbar-default .navbar-nav>.open>a:focus,
 .nav .open>a, .nav .open>a:hover, .nav .open>a:focus
-	background-color: white
+	background-color: $background
 
 .dropdown-menu
 	box-shadow: none
@@ -53,7 +56,7 @@ $highlight: #eee
 	// border-top: $registration 1px solid
 
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, body a:hover
-	background-color: white 
+	background-color: $background 
 
 .divider
 	border-top: 1px solid $highlight
@@ -64,11 +67,12 @@ $highlight: #eee
 body
 	color: $registration
 	padding-top: 70px
+	padding-bottom: 40px
 	font-family: Lato, 
-	font-weight: 100
+	// font-weight: 100
 
 	h1, h2, h3, h4, h5, h6
-		font-weight: 100
+		font-weight: 300
 
 	a
 		color: $registration
@@ -85,6 +89,7 @@ body
 	h1
 		font-size: 70px
 		font-weight: 100
+		margin-left: -4px
 
 /**********/
 /*BLOG    */

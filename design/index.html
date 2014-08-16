@@ -9,12 +9,14 @@ title: Design Portfolio
 	</div>
 </div>
 
+
+
 {% for post in site.design_portfolio reversed %}
       <div class="row">
             <div class="col-sm-12">
-                  <h2>{{post.title}}</h2>
+            <h2><a href="{{post.url}}">{{post.title}}</a></h2>
                   <h3>{{post.date}}</h3>
-                  <p><a href="{{post.url}}">Look at Post!</a></p>
+                  <h4>Role: {{post.role}}</h4>
             </div>
       </div>
 {% endfor %}
