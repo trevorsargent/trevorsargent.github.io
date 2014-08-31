@@ -7,9 +7,9 @@ title: Development Projects
 {% if post.status != "draft" %}
       <div class="row">
             <div class="col-sm-12">
-                  <h2>{{post.title}}</h2>
+                  <h2><a href="http://trevorsargent.github.io/{{post.reponame}}">{{post.title}}</a></h2>
                   <h3>{{post.date}}</h3>
-                  <p><a href="http://trevorsargent.github.io/{{post.reponame}}">Visit Project!</a></p>
+                  <p>{{post.description}}</p>
                   <p><a href="http://github.com/trevorsargent/{{post.reponame}}">view project source on github!</a></p>
             </div>
       </div>

@@ -12,6 +12,7 @@ title: Design Portfolio
 
 
 {% for post in site.design_portfolio reversed %}
+{% if post.status != "draft" %}
       <div class="row">
             <div class="col-sm-12">
             <h2><a href="{{post.url}}">{{post.title}}</a></h2>
@@ -19,4 +20,5 @@ title: Design Portfolio
                   <h4>Role: {{post.role}}</h4>
             </div>
       </div>
+{% endif %}
 {% endfor %}
