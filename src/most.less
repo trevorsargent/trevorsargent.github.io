@@ -1,0 +1,33 @@
+@import "colors.less";
+
+body{
+
+  color: @registration;
+  padding-top: 70px;
+  padding-bottom: 40px;
+  // font-weight: 100;
+
+  h1, h2, h3, h4, h5, h6{
+    font-weight: 300;
+  }
+
+  a{
+    color: @registration;
+    border-bottom: 1px solid @highlight;
+    padding-bottom: 2px;
+    -webkit-transition: border-bottom .3s;
+  }
+
+  a:hover{
+    color: $registration;
+    text-decoration: none;
+    // background-color: @highlight;
+    border-bottom: 3px solid @accent;
+  }
+
+  h1{
+    font-size: 70px;
+    font-weight: 100;
+    margin-left: -4px;
+  }
+}
