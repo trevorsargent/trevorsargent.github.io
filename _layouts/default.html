@@ -1,14 +1,20 @@
-{% include head.html %}
-{% include  nav.html %}
+<html>
 
+	<head>
+		{% include head.html %}
+	</head>
 
-<!-- <div class="image-wrapper"> -->
-	<!-- <div class="color-wrapper"> -->
+	<body>
+		{% include nav.html %}
+
 		<div class="container">
 			{{content}}
 		</div>
-	<!-- </div> -->
-<!-- </div> -->
 
-{% include scripts.html %}
-{% include foot.html %}
+		<footer>
+			{% include footer.html %}
+		</footer>
+		{% include scripts.html %}
+	</body>
+
+</html>

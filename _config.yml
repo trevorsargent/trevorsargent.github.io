@@ -4,8 +4,5 @@ highlighter: pygments
 baseurl: 
 
 collections: 
-  design_portfolio:
-    output: true  
-
-  development_projects:	
-    output: false 
+  _projects:	
+    output: true 
