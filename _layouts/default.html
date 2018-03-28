@@ -1,19 +1,20 @@
 <html>
 
-<head>
-	{% include head.html %}
-</head>
+	<head>
+		{% include head.html %}
+	</head>
 
-<body>
+	<body>
 
-	<div class="container">
-		{{content}}
-	</div>
+		{% include nav.html %}
+		<div class="container">
+			{{content}}
+		</div>
 
-	<footer>
-		{% include footer.html %}
-	</footer>
-	{% include scripts.html %}
-</body>
+		<footer>
+			{% include footer.html %}
+		</footer>
+		{% include scripts.html %}
+	</body>
 
 </html>
