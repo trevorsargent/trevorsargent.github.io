@@ -1,8 +1,8 @@
 name: Trevor Sargent
-markdown: redcarpet
+# markdown: redcarpet
 highlighter: pygments
-baseurl: 
+baseurl: ""
 
 collections: 
-  _projects:	
-    output: true 
+  - projects
+    # output: true 

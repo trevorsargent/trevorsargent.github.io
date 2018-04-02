@@ -1,0 +1,14 @@
+<div class="featured">
+	{% include nav.html %}
+	<div class="back">
+		<div class="container">
+
+			<h2>the things!</h2>
+
+			{% for p in site.projects %}
+			<h3>{{p.title}}</h3>
+			{% endfor %}
+
+		</div>
+	</div>
+</div>
