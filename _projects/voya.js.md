@@ -1,6 +1,6 @@
 ---
 title: voya.js
-reponame: voya.js
+github: voya.js
 demo: https://trevorsargent.github.io/voya.js/
 status: published
 description: A delightfully creepy, textbased, choose your own adventure

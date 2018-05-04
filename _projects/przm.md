@@ -1,6 +1,6 @@
 ---
 title: przm
-reponame: przm
+github: przm
 demo: https://przm-public.firebaseapp.com
 ---
 

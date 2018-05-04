@@ -1,8 +1,14 @@
 <ul class="links">
 	<li>
-		<a href="http://github.com/trevorsargent/{{p.reponame}}">GitHub</a>
-		<a href="/roadmaps/{{p.slug}}">Roadmap</a>
+		{% if p.github %}
+		<a href="http://github.com/trevorsargent/{{p.github}}">GitHub</a>
+		{% endif %} {% if p.roadmap %}
+		<a href="/roadmaps/{{p.roadmap}}">Roadmap</a>
+		{% endif %} {% if p.demo %}
 		<a href="{{p.demo}}">Demo</a>
+		{% endif %} {% if p.view %}
+		<a href="{{p.view}}">View</a>
+		{% endif %}
 	</li>
 
 </ul>
