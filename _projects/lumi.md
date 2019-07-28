@@ -1,6 +1,7 @@
 ---
 title: 'Lumi Miei Cari Lumi'
 view: 'https://www.youtube.com/watch?v=wwSZMYswBN8'
+published: false
 ---
 
 This was a fun one: for a "History of Western Music" class back in college, part of our final was to create a 'music video' for a piece of music from the period we had been studying.  I chose this sweet little song by Claudio Monteverdi, and dragged a couple of my good friends and a whole grocery bag full of candles into the black box theatre, and proceeded to have a very very good time. 
