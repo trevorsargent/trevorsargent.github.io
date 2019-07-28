@@ -13,54 +13,54 @@
 	--sub-head-weight: 700;
 	--text-weight: 300;
 
-	--page-height: 90vh;
+	--page-height: 75vh;
 
 	--highlight-padding: 7px 10px 5px 10px;
 
 	--highlight-transition: all .2s;
 }
 
-body{
+body {
 	font-family: 'Montserrat', sans-serif;
 	background: var(--white);
 	color: var(--black);
 }
 
-.back{
+.back {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-.container{
+.container {
 	width: 800px;
 	padding: 120px 0px;
 }
 
-h2{
+h2 {
 	display: inline-block;
 	margin-bottom: 20px;
-	padding: var(--highlight-padding);	
+	padding: var(--highlight-padding);
 	font-size: var(--head);
 	font-weight: var(--head-weight);
 	color: var(--white);
 	background: var(--red);
 }
 
-h3{
+h3 {
 	font-size: var(--sub-head);
 	font-weight: var(--sub-head-weight);
 	margin-bottom: 45px;
 }
 
-h4{
+h4 {
 	font-size: var(--sub-head);
 	font-weight: var(--sub-head-weight);
 	margin-top: 25px;
 	margin-bottom: 25px;
 }
 
-p{
+p {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: var(--text-weight);
 	font-size: var(--text);
@@ -68,7 +68,7 @@ p{
 	margin-bottom: 20px;
 }
 
-p a{
+p a {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	position: relative;
@@ -81,12 +81,12 @@ a {
 	transition: var(--highlight-transition);
 }
 
-a:hover{
+a:hover {
 	background: var(--red);
 	color: var(--white);
 }
 
-.nav-container{
+.nav-container {
 	position: relative;
 	width: 150px;
 	height: var(--page-height);
@@ -94,7 +94,7 @@ a:hover{
 	-webkit-mask-clip: border-box;
 }
 
-nav{
+nav {
 	position: absolute;
 	right: 20;
 	height: var(--page-height);
@@ -102,53 +102,54 @@ nav{
 	font-size: var(--large);
 }
 
-nav ul{
+nav ul {
 	text-align: right;
 	position: fixed;
 	top: 20;
 }
 
-nav li{
+nav li {
 	margin-bottom: 10px;
 }
 
-nav a{
+nav a {
 	text-decoration: none;
 	padding: 0 8px;
 }
 
-.super nav{
+.super nav {
 	z-index: 100;
 }
 
-.super nav a{
+.super nav a {
 	opacity: 0;
 	background: var(--red);
 	color: var(--white);
 	transition: var(--highlight-transition);
 }
 
-.super nav a:hover{
+.super nav a:hover {
 	opacity: 1;
 }
 
-.hero nav{
+.hero nav {
 	z-index: 95;
 }
 
-.hero nav a, .featured nav a{
+.hero nav a,
+.featured nav a {
 	color: var(--red);
 }
 
-.about nav{
+.about nav {
 	z-index: 90;
 }
 
-.about nav a{
-	color:var(--white);
+.about nav a {
+	color: var(--white);
 }
 
-.hero{
+.hero {
 	position: relative;
 	min-height: var(--page-height);
 	box-sizing: border-box;
@@ -158,18 +159,18 @@ nav a{
 	overflow: hidden;
 }
 
-.hero h1{
+.hero h1 {
 	font-size: var(--title);
 	font-weight: var(--head-weight);
 	margin-left: -9px;
-	color:var(--red);
+	color: var(--red);
 }
 
-.hero h3{
+.hero h3 {
 	color: var(--black);
 }
 
-.about{
+.about {
 	position: relative;
 	overflow: hidden;
 	width: 100%;
@@ -179,20 +180,19 @@ nav a{
 	color: var(--white)
 }
 
-.about h2{
+.about h2 {
 	color: var(--white);
-	background: var(--red); 
+	background: var(--red);
 }
 
-.about h3{
+.about h3 {
 	color: var(--white);
 }
 
-.project{
+.project {
 	margin-bottom: 45px;
 }
 
-.links{
+.links {
 	margin-bottom: 10px;
 }
-

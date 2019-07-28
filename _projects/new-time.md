@@ -1,5 +1,5 @@
 ---
-title: 'New Time'
+title: 'new time'
 github: 'newTime'
 view: 'http://trevorsargent.github.io/newTime'
 ---

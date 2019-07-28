@@ -1,5 +1,5 @@
 ---
-title: bistro112
+title: bistro 112 at the tannery
 view: http://www.bistro112sc.com
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: michaelolich.com
+title: michael olich design
 view: http://www.michaelolich.com
 ---
 
-I performed the initial design/build and subsequent re-brand of the website for Bistro 112 at the Tannery Arts Center in Santa Cruz, California. 
+I performed the full-stack design and build of the portfolio for Michael Olich Design
